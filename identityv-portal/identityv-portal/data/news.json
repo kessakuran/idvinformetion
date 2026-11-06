@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "updated_at": "2026-11-06T19:00:00+09:00",
+    "source": "sample",
+    "note": "表示確認用のサンプルです。fetcher.py を実行すると公式サイトの最新情報に置き換わります。",
+    "count": 12
+  },
+  "items": [
+    {
+      "id": "3a42aba61064",
+      "category": "update",
+      "title": "2026-11-05 ゲームアップデートのお知らせ（11/5 AM 9：00実施）",
+      "date": "2026-11-04",
+      "summary": "11月5日（木）午前9時から実施されるゲームアップデートの告知です。更新内容の詳細は公式サイトの記事で確認できます。",
+      "url": "https://idv.163.com/jp/news/update/20261104/35356_1318751.html",
+      "source": "公式サイト",
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "e3dbbd02f0da",
+      "category": "maintenance",
+      "title": "臨時メンテナンスのお知らせ（サンプル）",
+      "date": "2026-11-02",
+      "summary": "表示確認用のサンプルデータです。fetcher.py を実行すると、公式サイトのメンテナンス告知に置き換わります。",
+      "url": "https://www.identityvgame.com/jp/news/announcement/index.html",
+      "source": "公式サイト",
+      "is_sample": true,
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "b99829ad62e9",
+      "category": "event",
+      "title": "コラボイベント開催のお知らせ（サンプル）",
+      "date": "2026-10-30",
+      "summary": "表示確認用のサンプルデータです。イベントやコラボの告知は「イベント/コラボ」タブにまとまります。",
+      "url": "https://www.identityvgame.com/jp/news/official/index.html",
+      "source": "公式サイト",
+      "is_sample": true,
+      "tags": [
+        "コラボ"
+      ],
+      "detail": ""
+    },
+    {
+      "id": "6f0a5ef7f1ee",
+      "category": "update",
+      "title": "2026-10-29 ゲームアップデートのお知らせ（10/29 AM 9：00実施）",
+      "date": "2026-10-28",
+      "summary": "10月29日（木）午前9時から実施されたゲームアップデートの告知です。更新内容の詳細は公式サイトの記事で確認できます。",
+      "url": "https://idv.163.com/jp/news/update/20261028/35356_1317983.html",
+      "source": "公式サイト",
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "4f61eb3bfc9d",
+      "category": "update",
+      "title": "2026-10-22 ゲームアップデートのお知らせ（10/22 AM 9：00実施）",
+      "date": "2026-10-21",
+      "summary": "10月22日（木）午前9時から実施されたゲームアップデートの告知です。",
+      "url": "https://idv.163.com/jp/news/update/20261021/35356_1317336.html",
+      "source": "公式サイト",
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "b9ff087c0c73",
+      "category": "update",
+      "title": "2026-10-15 ゲームアップデートのお知らせ（10/15 AM 9：00実施）",
+      "date": "2026-10-14",
+      "summary": "10月15日（木）午前9時から実施されたゲームアップデートの告知です。",
+      "url": "https://idv.163.com/jp/news/update/20261014/35356_1316652.html",
+      "source": "公式サイト",
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "0783cc9ffc73",
+      "category": "maintenance",
+      "title": "サーバーメンテナンス時間延長のお知らせ（サンプル）",
+      "date": "2026-10-08",
+      "summary": "表示確認用のサンプルデータです。メンテナンスの延長や終了の告知は「メンテナンス」タブにまとまります。",
+      "url": "https://www.identityvgame.com/jp/news/announcement/index.html",
+      "source": "公式サイト",
+      "is_sample": true,
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "7a8c0ec1c5f0",
+      "category": "update",
+      "title": "2026-09-30 ゲームアップデートのお知らせ（09/30 AM 9：00実施）",
+      "date": "2026-09-29",
+      "summary": "9月30日（水）午前9時から実施されたゲームアップデートの告知です。",
+      "url": "https://idv.163.com/jp/news/update/20260929/35356_1315506.html",
+      "source": "公式サイト",
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "13a310a9805b",
+      "category": "update",
+      "title": "2026-09-24 ゲームアップデートのお知らせ（09/24 AM 9：00実施）",
+      "date": "2026-09-23",
+      "summary": "9月24日（木）午前9時から実施されたゲームアップデートの告知です。",
+      "url": "https://idv.163.com/jp/news/update/20260923/35356_1314918.html",
+      "source": "公式サイト",
+      "tags": [],
+      "detail": ""
+    },
+    {
+      "id": "2cbc2a774b8a",
+      "category": "event",
+      "title": "2026年3月 1V4＆2V8期間限定娯楽モード投稿募集キャンペーン",
+      "date": "2026-03-25",
+      "summary": "期間限定の娯楽モード（1V4・2V8）に関する投稿募集キャンペーンのお知らせです。参加方法と期間は公式サイトの記事をご確認ください。",
+      "url": "https://idv.163.com/jp/news/official/20260325/35355_1292945.html",
+      "source": "公式サイト",
+      "tags": [
+        "キャンペーン",
+        "ゲームモード"
+      ],
+      "detail": ""
+    },
+    {
+      "id": "b5a1308f3a28",
+      "category": "other",
+      "title": "違反行為への打撃及び処罰のお知らせ（2026年2月）",
+      "date": "2026-03-02",
+      "summary": "2026年2月に確認された違反行為と、その処罰内容についてのお知らせです。",
+      "url": "https://idv.163.com/jp/news/official/20260302/35355_1289028.html",
+      "source": "公式サイト",
+      "tags": [
+        "違反処罰"
+      ],
+      "detail": ""
+    },
+    {
+      "id": "a43a38669070",
+      "category": "other",
+      "title": "違反行為への打撃及び処罰のお知らせ（2026年1月）",
+      "date": "2026-02-03",
+      "summary": "2026年1月に確認された違反行為と、その処罰内容についてのお知らせです。",
+      "url": "https://idv.163.com/jp/news/official/20260203/35355_1285213.html",
+      "source": "公式サイト",
+      "tags": [
+        "違反処罰"
+      ],
+      "detail": ""
+    }
+  ]
+}

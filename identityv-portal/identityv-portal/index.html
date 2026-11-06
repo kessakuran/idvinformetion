@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>荘園新報｜第五人格（Identity V）最新ニュースまとめ</title>
+  <meta name="description" content="第五人格（Identity V）のメンテナンス、アップデート、イベント・コラボの告知を公式サイトから集めて、新しい順に掲載する非公式ポータルです。">
+  <meta name="theme-color" content="#0e0a0b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="荘園新報｜第五人格 最新ニュースまとめ">
+  <meta property="og:description" content="メンテナンス、アップデート、イベント・コラボの告知を新しい順にまとめています。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e0a0b'/%3E%3Cpath d='M7 30V17C7 10 12 6 16 3c4 3 9 7 9 14v13' fill='none' stroke='%23c8a565' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='13' r='3' fill='%238b1a24'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#news">ニュース一覧へ移動</a>
+
+  <header class="masthead">
+    <div class="masthead__bar">
+      <p>非公式ファンサイト</p>
+      <p id="updated-at" class="masthead__updated">更新日時を確認しています</p>
+    </div>
+
+    <div class="masthead__hero">
+      <div class="crest">
+        <!-- ゴシックのアーチ窓（オリジナル図形） -->
+        <svg class="arch" viewBox="0 0 480 380" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="arch-light" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#8b1a24" stop-opacity="0.5"/>
+              <stop offset="0.65" stop-color="#8b1a24" stop-opacity="0.08"/>
+              <stop offset="1" stop-color="#8b1a24" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path class="arch__fill" d="M40 380V190C40 100 140 48 240 18c100 30 200 82 200 172v190z" fill="url(#arch-light)"/>
+          <path class="arch__line" pathLength="1" d="M40 380V190C40 100 140 48 240 18c100 30 200 82 200 172v190"/>
+          <path class="arch__line arch__line--inner" pathLength="1" d="M56 380V194C56 110 150 64 240 36c90 28 184 74 184 158v186"/>
+          <circle class="arch__line" pathLength="1" cx="240" cy="108" r="22"/>
+          <circle class="arch__line arch__line--inner" pathLength="1" cx="240" cy="108" r="9"/>
+        </svg>
+        <h1 class="masthead__title">
+          <span class="masthead__name">荘園新報</span>
+          <span class="masthead__sub">第五人格 ニュースまとめ</span>
+        </h1>
+      </div>
+      <p class="masthead__lead">メンテナンス、アップデート、イベントの告知を公式サイトから集めて、新しい順に並べています。</p>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="toolbar__inner">
+      <div class="tabs" role="tablist" aria-label="カテゴリで絞り込む">
+        <button class="tab" type="button" role="tab" id="tab-all" data-category="all" aria-selected="true" aria-controls="news">
+          すべて<span class="tab__count" data-count="all">0</span>
+        </button>
+        <button class="tab" type="button" role="tab" id="tab-maintenance" data-category="maintenance" aria-selected="false" aria-controls="news" tabindex="-1">
+          メンテナンス<span class="tab__count" data-count="maintenance">0</span>
+        </button>
+        <button class="tab" type="button" role="tab" id="tab-update" data-category="update" aria-selected="false" aria-controls="news" tabindex="-1">
+          アプデ情報<span class="tab__count" data-count="update">0</span>
+        </button>
+        <button class="tab" type="button" role="tab" id="tab-event" data-category="event" aria-selected="false" aria-controls="news" tabindex="-1">
+          イベント/コラボ<span class="tab__count" data-count="event">0</span>
+        </button>
+        <button class="tab" type="button" role="tab" id="tab-other" data-category="other" aria-selected="false" aria-controls="news" tabindex="-1">
+          その他<span class="tab__count" data-count="other">0</span>
+        </button>
+      </div>
+
+      <div class="search" role="search">
+        <label class="visually-hidden" for="search-input">キーワードで検索</label>
+        <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/>
+        </svg>
+        <input id="search-input" class="search__input" type="search" placeholder="キーワードで探す（例：コラボ -サンプル）" autocomplete="off" enterkeyhint="search" aria-describedby="search-help-summary">
+        <kbd class="search__hint" aria-hidden="true">/</kbd>
+        <button type="button" class="search__clear" id="search-clear" aria-label="検索キーワードを消す" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="content">
+    <p id="sample-notice" class="notice" hidden>
+      表示確認用のサンプルデータを表示しています。<code>python fetcher.py</code> を実行すると、公式サイトの最新情報に置き換わります。
+    </p>
+
+    <!-- 絞り込み（タグ・期間・お気に入り・並び順） -->
+    <section class="filters" aria-label="詳細な絞り込み">
+      <div class="filters__row">
+        <button type="button" id="filter-toggle" class="chip-button" aria-expanded="false" aria-controls="filter-panel">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+          詳細な絞り込み
+          <span id="filter-badge" class="chip-button__badge" hidden></span>
+        </button>
+        <button type="button" id="fav-toggle" class="chip-button" aria-pressed="false">
+          <svg class="icon icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>
+          お気に入りだけ
+          <span id="fav-count" class="chip-button__count">0</span>
+        </button>
+        <label class="sort">
+          <span class="sort__label">並び順</span>
+          <select id="sort-select" class="sort__select">
+            <option value="new">新しい順</option>
+            <option value="old">古い順</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="filter-panel" class="filter-panel" hidden>
+        <fieldset class="filter-group">
+          <legend class="filter-group__legend">タグ</legend>
+          <div class="filter-group__head">
+            <span class="filter-group__hint">複数選ぶと</span>
+            <div class="segmented segmented--small" role="radiogroup" aria-label="複数のタグの組み合わせ方">
+              <label><input type="radio" name="tag-mode" value="all" checked><span>すべて含む</span></label>
+              <label><input type="radio" name="tag-mode" value="any"><span>どれかを含む</span></label>
+            </div>
+          </div>
+          <div id="tag-list" class="tag-list"></div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-group__legend">掲載日</legend>
+          <div id="period-list" class="segmented" role="radiogroup" aria-label="掲載日で絞り込む"></div>
+        </fieldset>
+
+        <details class="search-help">
+          <summary id="search-help-summary">キーワード検索のコツ</summary>
+          <dl class="search-help__list">
+            <div><dt><code>コラボ 衣装</code></dt><dd>スペースで区切ると、すべての言葉を含む記事（AND）</dd></div>
+            <div><dt><code>コラボ OR 大会</code></dt><dd><code>OR</code> か <code>|</code> で、どちらかを含む記事</dd></div>
+            <div><dt><code>-サンプル</code></dt><dd>先頭に <code>-</code> を付けると、その言葉を含む記事を除外</dd></div>
+            <div><dt><code>"11月5日"</code></dt><dd>" " で囲むと、スペースを含む語句をそのまま検索</dd></div>
+            <div><dt><code>#補填</code></dt><dd><code>#</code> を付けると、タグで絞り込み</dd></div>
+          </dl>
+          <p class="search-help__note">ひらがな/カタカナ、全角/半角、大文字/小文字は区別しません。</p>
+        </details>
+      </div>
+
+      <div id="active-filters" class="active-filters" hidden>
+        <ul id="active-filter-list" class="active-filters__list" aria-label="適用中の条件"></ul>
+        <button type="button" id="clear-all" class="text-button">すべて解除</button>
+      </div>
+    </section>
+
+    <p id="result-status" class="result-status" role="status" aria-live="polite"></p>
+
+    <section id="news" class="news-grid" role="tabpanel" aria-labelledby="tab-all" aria-busy="true">
+      <div class="card card--skeleton" aria-hidden="true"></div>
+      <div class="card card--skeleton" aria-hidden="true"></div>
+      <div class="card card--skeleton" aria-hidden="true"></div>
+      <div class="card card--skeleton" aria-hidden="true"></div>
+    </section>
+
+    <div id="empty-state" class="state" hidden>
+      <p id="empty-title" class="state__title">一致するニュースはありません</p>
+      <p id="empty-message" class="state__text"></p>
+      <button type="button" class="button" id="reset-filters">絞り込みを解除</button>
+    </div>
+
+    <div id="error-state" class="state state--error" role="alert" hidden>
+      <p class="state__title">ニュースを読み込めませんでした</p>
+      <p id="error-message" class="state__text"></p>
+      <button type="button" class="button" id="retry">もう一度読み込む</button>
+    </div>
+
+    <div class="more">
+      <button type="button" id="load-more" class="button" hidden>さらに表示</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>当サイトは非公式のファンサイトです。掲載内容は公式発表を要約したもので、正確な情報は各記事のリンク先でご確認ください。</p>
+    <p>「Identity V 第五人格」は NetEase Games の商標または登録商標です。</p>
+  </footer>
+
+  <!-- 記事の詳細ポップアップ -->
+  <dialog id="detail" class="modal" aria-labelledby="modal-title">
+    <div class="modal__scroll">
+      <header class="modal__head">
+        <span class="seal" aria-hidden="true"></span>
+        <span class="modal__category"></span>
+        <time class="modal__date"></time>
+        <span class="card__new modal__new" hidden>新着</span>
+        <button type="button" class="modal__close" data-close aria-label="閉じる">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <h2 id="modal-title" class="modal__title"></h2>
+      <ul class="modal__tags tag-row" aria-label="タグ"></ul>
+      <div class="modal__body"></div>
+      <p class="modal__meta"></p>
+    </div>
+    <footer class="modal__foot">
+      <div class="modal__actions">
+        <button type="button" class="bookmark bookmark--large" aria-pressed="false">
+          <svg class="icon icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>
+          <span class="bookmark__label">お気に入り</span>
+        </button>
+        <button type="button" class="button button--ghost" id="copy-link">リンクをコピー</button>
+        <a class="button button--solid modal__link" target="_blank" rel="noopener noreferrer">
+          公式の元記事を読む
+          <svg class="icon-external" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden">（新しいタブで開きます）</span>
+        </a>
+      </div>
+      <nav class="modal__nav" aria-label="前後の記事">
+        <button type="button" class="text-button" id="modal-prev">← 前の記事</button>
+        <span class="modal__position" id="modal-position"></span>
+        <button type="button" class="text-button" id="modal-next">次の記事 →</button>
+      </nav>
+    </footer>
+  </dialog>
+
+  <p id="toast" class="toast" role="status" aria-live="polite" hidden></p>
+
+  <!-- ニュースカードの雛形（script.js が複製して使う） -->
+  <template id="card-template">
+    <article class="card">
+      <header class="card__head">
+        <span class="seal" aria-hidden="true"></span>
+        <span class="card__category"></span>
+        <time class="card__date"></time>
+        <span class="card__new" hidden>新着</span>
+      </header>
+      <h2 class="card__title"><button type="button" class="card__open" aria-haspopup="dialog"></button></h2>
+      <p class="card__summary"></p>
+      <ul class="card__tags tag-row" aria-label="タグ"></ul>
+      <footer class="card__foot">
+        <div class="card__actions">
+          <button type="button" class="bookmark" aria-pressed="false">
+            <svg class="icon icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>
+            <span class="bookmark__label">保存</span>
+          </button>
+          <span class="card__sample" hidden>サンプル</span>
+          <span class="card__saved" hidden>保存済みの記事</span>
+        </div>
+        <a class="button card__link" target="_blank" rel="noopener noreferrer">
+          元記事
+          <svg class="icon-external" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden">（新しいタブで開きます）</span>
+        </a>
+      </footer>
+    </article>
+  </template>
+
+  <noscript>
+    <p class="noscript">ニュース一覧の表示には JavaScript が必要です。ブラウザの設定で有効にしてください。</p>
+  </noscript>
+</body>
+</html>
